@@ -1,0 +1,18 @@
+<form>
+    <label for="search">Search :</label>
+    <input id="search" type="text" name="search" [formControl]="searchInputControl"/>
+
+    <p>This field value is : {{searchInputControl.value}}</p>
+    <p>This field validation state is : {{searchInputControl.status.toLowerCase()}}</p>
+    <p>This field touch state is : {{searchInputControl.touched}}</p>
+    <p>This field dirty state is : {{searchInputControl.dirty}}</p>
+
+    <ul>
+        @for (fruit of filteredDataSource(); track $index) {
+            <li>{{fruit}}</li>    
+        }
+    </ul>
+
+    <button type="button" (click)="handleClearBtnClicked()">Clear</button>
+    <button type="button" (click)="handleSetSearchValueClicked()">Example</button>
+</form>

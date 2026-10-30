@@ -1,0 +1,14 @@
+<form #myForm="ngForm" (ngSubmit)="handleOnSubmit()">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required email placeholder="Your email here !" [(ngModel)]="email" />
+        <!-- <p id="error-message" class="error-message" [class.active-error]="displayErrorMessage()">{{errorMessage()}}</p> -->
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required placeholder="password" [(ngModel)]="password"/>
+    </div>
+
+    <p id="error-message" class="error-message" [class.active-error]="displayErrorMessage()">{{errorMessage()}}</p>
+    <button type="submit" [disabled]="myForm.invalid">Connect</button>
+</form>

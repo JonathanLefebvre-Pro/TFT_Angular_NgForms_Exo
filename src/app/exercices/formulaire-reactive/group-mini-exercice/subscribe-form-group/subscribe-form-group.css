@@ -1,0 +1,35 @@
+:host {
+    display: contents;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: .5rem;
+}
+
+.form-group-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    label {
+        display: flex;
+        flex-direction: row;
+        flex: 0.5;
+    }
+
+    input {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+    }
+}
+
+p {
+    margin: 0;
+}

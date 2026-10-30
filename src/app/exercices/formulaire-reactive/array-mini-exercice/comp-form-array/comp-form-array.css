@@ -1,0 +1,17 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.form-array {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
