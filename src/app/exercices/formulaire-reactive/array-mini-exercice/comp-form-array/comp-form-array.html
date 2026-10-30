@@ -1,4 +1,4 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="handleOnSubmit()">
     <div class="form-group">
         <label for="name">Name :</label>
         <input name="name" type="text" formControlName="name"/>
@@ -6,13 +6,14 @@
     <div>
         <label for="skills">Skills : {{skillInputs.length}}</label>
         <div class="form-array" formArrayName="skills">
-            @for (skill of skillInputs.value; track $index;) {
+            @for (skill of skillInputs.controls; track skill; let i=$index) {
                 <div class="form-group">
-                    <input type="text" [formControlName]="$index"/>
-                    <button (click)="removeSkillInput($index)" [disabled]="$index<1">-</button>
-                    <button (click)="addSkillInput()">+</button>
+                    <input type="text" [formControlName]="i"/>
+                    <button type="button" (click)="removeSkillInput(i)" [disabled]="i<1">-</button>
+                    <button type="button" (click)="addSkillInput()">+</button>
                 </div>
             }
         </div>
     </div>
+    <input type="submit" [disabled]="form.invalid"/>
 </form>

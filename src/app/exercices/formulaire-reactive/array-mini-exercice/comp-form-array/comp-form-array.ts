@@ -31,5 +31,13 @@ export class CompFormArray {
       return;
 
     this.skillInputs.removeAt(inputId);
+    this.skillInputs.markAsDirty();
+  }
+
+  protected handleOnSubmit(){
+    if(this.form.valid)
+      console.log(this.form.value);
+    else
+      console.debug("Form is not valid !");
   }
 }
