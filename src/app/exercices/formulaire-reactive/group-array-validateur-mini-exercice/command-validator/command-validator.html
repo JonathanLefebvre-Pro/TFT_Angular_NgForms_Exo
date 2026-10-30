@@ -5,7 +5,7 @@
     </div>
 
     <p>Products :</p>
-    <button (click)="addProduct()">+</button>
+    <button type="button" (click)="addProduct()">+</button>
     <div formArrayName="products">
         @for(product of products.controls;track product;let i=$index) {
             <label for="products">Product :</label>
@@ -22,7 +22,7 @@
                     <label for="price">Price (unit) :</label>
                     <input id="price" type="number" formControlName="unitPrice"/>
                 </div>
-                <button (click)="removeProduct(i)" [disabled]="i<1">-</button>
+                <button type="button" (click)="removeProduct(i)" [disabled]="i<1">-</button>
             </div>
         }
     </div>
