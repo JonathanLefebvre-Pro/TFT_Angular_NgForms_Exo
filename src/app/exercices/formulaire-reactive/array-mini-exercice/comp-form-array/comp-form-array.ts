@@ -31,7 +31,6 @@ export class CompFormArray {
       return;
 
     this.skillInputs.removeAt(inputId);
-    this.skillInputs.markAsDirty();
   }
 
   protected handleOnSubmit(){

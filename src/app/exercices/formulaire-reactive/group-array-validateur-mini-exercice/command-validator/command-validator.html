@@ -1,0 +1,30 @@
+<form [formGroup]="form" (ngSubmit)="handleOnSubmit()">
+    <div>
+        <label for="client">Client :</label>
+        <input id="client" type="text" formControlName="client"/>
+    </div>
+
+    <p>Products :</p>
+    <button (click)="addProduct()">+</button>
+    <div formArrayName="products">
+        @for(product of products.controls;track product;let i=$index) {
+            <label for="products">Product :</label>
+            <div id="products" [formGroupName]="i">
+                <div>
+                    <label for="product">Product name :</label>
+                    <input id="product" type="text" formControlName="product"/>
+                </div>
+                <div>
+                    <label for="quantity">Quantity :</label>
+                    <input id="quantity" type="number" formControlName="quantity"/>
+                </div>
+                <div>
+                    <label for="price">Price (unit) :</label>
+                    <input id="price" type="number" formControlName="unitPrice"/>
+                </div>
+                <button (click)="removeProduct(i)" [disabled]="i<1">-</button>
+            </div>
+        }
+    </div>
+    <input type="submit" [disabled]="form.invalid"/>
+</form>
